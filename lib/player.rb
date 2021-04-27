@@ -4,7 +4,7 @@ class Player
   attr_accessor :name, :life_points, :player
   def initialize(name)
     @name=name
-    @life_points=10
+    @life_points = 10 #j'ai monté un peu parce que faut pas déconner quand même
   end
   
   def show_state
@@ -25,7 +25,7 @@ class Player
   def attacks(player_attacked)
     puts "#{self.name} attaque #{player_attacked.name}"
     damage_inflicted = compute_damage
-    puts "Il lui inflige #{damage_inflicted} points de dommages"
+    puts "Il/Elle lui inflige #{damage_inflicted} points de dommages"
     puts player_attacked.gets_damage(damage_inflicted)
   end
 
@@ -50,6 +50,21 @@ class HumanPlayer
 
   def compute_damage
     rand(1..6) * @weapon_level
+  end
+
+  def gets_damage(damage)
+    @life_points-=damage
+    if @life_points <= 0
+      return ("#{@name} est mort(e)")
+    end
+  end
+
+  def is_alive
+    if self.life_points > 0
+      return true
+    else
+      return false
+    end
   end
 
   def attacks(player_attacked)
@@ -82,3 +97,4 @@ class HumanPlayer
     end
   end
 end
+
