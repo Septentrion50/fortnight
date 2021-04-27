@@ -79,6 +79,6 @@ class HumanPlayer
     else 
       self.life_points+=80
       return "Waow, tu as trouvé un pack de +80 points de vie !"
-
-
+    end
+  end
 end
