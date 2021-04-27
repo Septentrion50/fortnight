@@ -22,14 +22,15 @@ class Player
   def gets_dammage(dam)
     @life_points -= dam
     if @life_points <= 0
+      @life_points = 0
       puts "Le joueur #{@name} a été tué !"
     end
   end
 
   def attacks(other_player)
     dam = compute_damage
-    other_player.gets_dammage(dam)
     puts "#{@name} inflige #{dam} points de dommages à #{other_player.name}"
+    other_player.gets_dammage(dam)
   end
 
   def compute_damage
