@@ -98,3 +98,4 @@ class HumanPlayer
   end
 end
 
+#-----------------Version3-------------------#
