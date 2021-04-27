@@ -45,7 +45,6 @@ while human_player1.is_alive && (player1.is_alive || player2.is_alive)
     p human_player1.attacks(player2)
   else 
     puts "It's not on the menu"
-    break
   end
   
   puts "les autres joueurs t'attaquent!"
